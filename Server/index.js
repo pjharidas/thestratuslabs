@@ -8,16 +8,14 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "landingPage.html"));
 });
 app.listen(3000, () => {
-  console.log("server started");
+  console.log("server started on port 3000");
 });
-
-
 
 app.all("*", (req, res) => {
   res.send("404 not found");
 });
 
-//  404 page  
+//  404 page
 app.use((req, res) => {
   res.status(404).send("404 not found");
 });
